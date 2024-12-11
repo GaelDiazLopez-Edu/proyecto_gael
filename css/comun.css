@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-    /*Variables de colores*/
     --clr-main: #45880e;
     --clr-main-light: #73ff00;
     --clr-white: #fff7e5;
@@ -17,25 +16,94 @@
     font-family: 'Rubik', sans-serif;
 }
 
-html {
-    /* Valor por defecto */
-    font-size: 16px;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--clr-main);
+    color: var(--clr-main);
 }
 
-h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul{
-    margin: 0;
-    padding: 0;
+.container {
+    background-color: var(--clr-white);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
 }
 
-ul {
-    list-style-type: none;
+h2 {
+    margin-bottom: 1rem;
+    color: var(--clr-main);
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
-a {
-    text-decoration: none;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.texto-footer{
-    color: var(--clr-main-light);
-    font-size: .85rem;
+#input-nombre {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--clr-gray);
+    border-radius: 8px;
+    background-color: var(--clr-white);
+}
+
+#input-nombre:focus {
+    outline: none;
+    border-color: var(--clr-main-light);
+    box-shadow: 0 0 5px var(--clr-main-light);
+}
+
+#input-password {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--clr-gray);
+    border-radius: 8px;
+    background-color: var(--clr-white);
+}
+
+#input-password:focus {
+    outline: none;
+    border-color: var(--clr-main-light);
+    box-shadow: 0 0 5px var(--clr-main-light);
+}
+
+
+#botones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#boton-entrar,
+#boton-limpiar {
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--clr-main-light);
+    color: var(--clr-green);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#boton-entrar:hover {
+    background-color: var(--clr-green);
+    color: var(--clr-white);
+}
+
+#boton-limpiar:hover {
+    background-color: var(--clr-green);
+    color: var(--clr-white);
 }
