@@ -8,15 +8,7 @@
     <link rel="stylesheet" href="./css/inicio.css">
 </head>
 <body>
-    <div class="contenedor">
-        <main class="zona-productos">
-            <div class="recuadro-beige">
-                <h2 class="titulo">Todos los productos</h2>
-                <div class="contenedor-productos" id="contenedor-productos">
-                </div>
-            </div>
-        </main>
-
+    <div class="wrapper">
         <aside class="menu-lateral">
             <h1 class="logo">CarbaShop</h1>
             <nav>
@@ -24,15 +16,27 @@
                     <li><button id="todos" class="boton-menu active"><i class="bi bi-grid"></i> Todos los productos</button></li>
                     <li><button id="moviles" class="boton-menu"><i class="bi bi-phone"></i> Móviles</button></li>
                     <li><button id="portatiles" class="boton-menu"><i class="bi bi-laptop"></i> Portátiles</button></li>
-                    <li><button id="televisiones" class="boton-menu"><i class="bi bi-tv"></i> Televisiones</button></li>
-                    <li><button class="boton-carrito">
-                        <i class="bi bi-cart-fill"></i> Carrito <span class="numerito">0</span>
-                    </button></li>
+                    <li><button id="televisiones" class="boton-menu"><i class="bi bi-tv"></i> Televisores</button></li>
                 </ul>
             </nav>
+            <a href="./carrito.html" class="boton-carrito">
+                <i class="bi bi-cart-fill"></i> Carrito <span id="numerito">0</span>
+            </a>
             <p class="copyright">Gael Díaz López 2024 &copy;</p>
         </aside>
+        <main class="zona-productos">
+            <div class="recuadro-beige">
+                <h2 class="titulo">Todos los productos</h2>
+                <div class="contenedor-productos" id="contenedor-productos">
+                </div>
+            </div>
+        </main>
     </div>
+    <button class="menu-toggle" id="menu-toggle">
+        <i class="bi bi-list menu-icon"></i>
+        <i class="bi bi-x close-icon"></i>
+    </button>
+    <div class="overlay" id="overlay"></div>
     <script src="./js/inicio.js"></script>
 </body>
 </html>
