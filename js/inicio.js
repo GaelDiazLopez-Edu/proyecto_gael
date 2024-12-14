@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let productos = []; // Añadido para declarar la variable
+    let productos = [];
     const productosContainer = document.getElementById("contenedor-productos");
     const botonesCategorias = document.querySelectorAll(".boton-menu");
     const tituloPrincipal = document.querySelector(".titulo");
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById('menu-toggle');
     const menuLateral = document.querySelector('.menu-lateral');
 
-    // Añadir evento para el menú hamburguesa
+
     menuToggle.addEventListener('click', () => {
         menuLateral.classList.toggle('visible');
     });
@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Añadir funciones para el carrito
     let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
 
     function agregarAlCarrito(e) {
@@ -92,6 +91,5 @@ document.addEventListener("DOMContentLoaded", () => {
         numerito.innerText = nuevoNumerito;
     }
 
-    // Actualizar numerito al cargar la página
     actualizarNumerito();
 });
