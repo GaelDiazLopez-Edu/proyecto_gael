@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CarbaShop</title>
-  <link rel="stylesheet" type="text/css" href="./css/comun.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarbaShop</title>
+    <link rel="stylesheet" type="text/css" href="./css/comun.css" />
 </head>
-
 <body>
-  <div class="container">
-    <h2>Login</h2>
-    <form name="formulario" id="formulario">
-        <input type="text" name="nombre" id="input-nombre" placeholder="Login" />
-        <div id="error-nombre" class="error-message"></div>
-    
-        <input type="password" name="password" id="input-password" placeholder="Contraseña" />
-        <div id="error-password" class="error-message"></div>
+    <div class="container">
+        <h2>Login</h2>
+        <form name="formulario" id="formulario" onsubmit="return validarFormulario(event)">
+            <input type="text" name="nombre" id="input-nombre" placeholder="Login" />
+            <div id="error-nombre" class="error-message"></div>
         
-        <div id="botones">
-            <input type="submit" id="boton-entrar" name="enviar" value="Entrar a CarbaShop" />
-            <input type="button" id="boton-limpiar" name="limpiar" value="Limpiar Datos" />
-        </div>
-    </form>
-  </div>
+            <input type="password" name="password" id="input-password" placeholder="Contraseña" />
+            <div id="error-password" class="error-message"></div>
+            
+            <div id="botones">
+                <input type="submit" id="boton-entrar" name="enviar" value="Entrar a CarbaShop" />
+                <input type="button" id="boton-limpiar" name="limpiar" value="Limpiar Datos" onclick="limpiarFormulario()" />
+            </div>
+        </form>
+    </div>
+    <script>
+        function validarFormulario(event) {
+            event.preventDefault();
+            
+            const nombre = document.getElementById('input-nombre').value;
+            const password = document.getElementById('input-password').value;
+            
+            if(nombre === 'gael' && password === '1234') {
+                window.location.href = 'main.html';
+            } else {
+                document.getElementById('error-password').textContent = 'Usuario o contraseña incorrectos';
+            }
+            return false;
+        }
+
+        function limpiarFormulario() {
+            document.getElementById('input-nombre').value = '';
+            document.getElementById('input-password').value = '';
+            document.getElementById('error-nombre').textContent = '';
+            document.getElementById('error-password').textContent = '';
+        }
+    </script>
 </body>
 </html>
